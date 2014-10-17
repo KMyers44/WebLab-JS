@@ -1,10 +1,10 @@
 
-function bricks(small, large, total_length) {
-    var small = small * 1; //small bricks are 1" each
+function bricks(small, large, totalLength) {
+    var small = small; //small bricks are 1" each
     var large = large * 5;  //large bricks are 5" each
-    var available_length = small + large;
+    var availableLength = small + large;
 
-    if (available_length <= total_length) {
+    if (availableLength <= totalLength) {
         return true;
     } else {
         return false;
@@ -13,4 +13,4 @@ function bricks(small, large, total_length) {
     return bricks;
 }
 
-console.log(bricks(4, 4, 25));
+console.log(bricks(8, 4, 25));
