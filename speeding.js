@@ -1,9 +1,9 @@
 
-
-var speed = {};
-var isBday = 1;    // if birthday = true, then deduct 5 mph from speed
-
 function isSpeeding(speed, isBday) {
+
+    var speed = {};
+    var isBday = 1;    // if birthday = true, then deduct 5 mph from speed
+
 
     if (isBday == 1) {
         speed = speed - 5;
