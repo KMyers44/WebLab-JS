@@ -1,0 +1,25 @@
+.container {
+    border: 5px solid black;
+    height: 159px;
+    width: 733px;
+    margin: 0 auto;
+    margin-top: 110px;
+    background-color: #dfdfdf;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    float: left;
+    margin: 20px;
+    border-radius: 20%;
+    transition: all .5s ease;
+}
+
+.hover,
+.selected {
+    background-color: green;
+    width: 105px;
+    height: 105px;
+}
