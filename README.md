@@ -1,4 +1,4 @@
-js101
+WebLab-JS
 =====
 
-javascript examples
+javascript examples and projects
