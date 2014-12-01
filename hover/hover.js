@@ -1,21 +1,23 @@
 $(function() {
 
-    $('body').on('mouseenter', '.box', function(e) {
+
+
+    $('body').on('mouseenter', '.star', function(e) {
         var target = $(e.currentTarget); // box that is clicked is target
 
         target.addClass('hover');
-        target.prevAll('.box').addClass('hover');
+        target.prevAll('.star').addClass('hover');
     });
 
-    $('body').on('mouseleave', '.box', function() {
-        var target = $('.box');
+    $('body').on('mouseleave', '.star', function() {
+        var target = $('.star');
 
         target.removeClass('hover');
-        target.prevAll('.box').removeClass('hover');
+        target.prevAll('.star').removeClass('hover');
     });
 
     // e.stopPropagation stops the event that's set on the box from bubbling up through parent
-    $('body').on('click', '.box', function(e) {
+    $('body').on('click', '.star', function(e) {
         e.stopPropagation();
         highlightCorrectBoxes(e);
         countHighlightedBoxes();
@@ -23,7 +25,7 @@ $(function() {
 
 
     $('body').on('click','.container', function() {
-        $('.box').removeClass('selected');
+        $('.star').removeClass('selected');
         countHighlightedBoxes();
     });
 
@@ -31,13 +33,21 @@ $(function() {
         var target = $(e.currentTarget);
 
         target.addClass('selected');
-        target.prevAll('.box').addClass('selected');
-        target.nextAll('.box').removeClass('selected');
+        target.prevAll('.star').addClass('selected');
+        target.nextAll('.star').removeClass('selected');
     }
 
     function countHighlightedBoxes() {
-        return $('.selected').length;
+        var currentStars = $('.selected').length + ' ' + 'stars';
+
+        if ( $('.selected').length === 1) {
+            return $('.count_box').text('1 star');
+        }
+       else {
+            return $('.count_box').text(currentStars);  //text in box how many stars selected
+        }
     }
+
 
 });
 
